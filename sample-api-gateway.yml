@@ -1,0 +1,16 @@
+server:
+  port: 9094
+zuul:
+  routes:
+    workspaces-service:
+        path: /workspaces-service/**
+        serviceId: workspaces-api
+    employees-service:
+        path: /employees-service/**
+        serviceId: employees-api
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8282/eureka
