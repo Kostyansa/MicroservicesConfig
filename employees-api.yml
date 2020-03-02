@@ -1,0 +1,15 @@
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    region: default
+    serviceUrl:
+      defaultZone: http://localhost:8282/eureka
+logging.level.com.netflix.eureka: TRACE
+logging.level.com.netflix.discovery: TRACE
+
+
+
+server:
+  port: 0
